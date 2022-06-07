@@ -1,6 +1,7 @@
 import Expense from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       title: "Car Insurance",
@@ -26,12 +27,10 @@ function App() {
 
   return (
     <div>
-      <h2>Lets get started!</h2>
-      <div>
-        <Expense expenses={expenses} />
-      </div>
+      <NewExpense />
+      <Expense expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;
