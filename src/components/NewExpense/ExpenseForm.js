@@ -15,9 +15,11 @@ const ExpenseForm = () => {
 
   const titleChangeHandler = (event) => {
     setUserInput({
-      enteredTitle: event.target.value, 
+      enteredTitle: event.target.value,
       enteredAmount: '',
       enteredDate: ''
+      // have to include other states as when you
+      // update states, it does not merge old states, but replace old states with new ones
     })
     console.log(enteredTitle)
   }
