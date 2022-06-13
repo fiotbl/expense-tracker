@@ -53,9 +53,9 @@ const ExpenseForm = (prop) => {
       date: new Date(userInput.enteredDate) // create variables using the states
     }
     prop.onAddNewExpense(expenseData); // prop to pass data to NewExpense parent
-    console.log(expenseData.title);
-    console.log(expenseData.amount);
-    console.log(expenseData.date);
+    // console.log(expenseData.title);
+    // console.log(expenseData.amount);
+    // console.log(expenseData.date);
     setUserInput({
       enteredTitle: '',
       enteredAmount: '',
