@@ -18,6 +18,7 @@ const Expense = (props) => {
         <ExpensesFilter selected={year} onYearSelect={onYearSelectHandler} />
         {props.expenses.map((expense) =>
         (<ExpenseItem
+          key={expense.id} // key is a prop that can be added to ANY component (custom or built in)
           title={expense.title}
           amount={expense.amount}
           date={expense.date} 

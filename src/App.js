@@ -4,21 +4,25 @@ import NewExpense from "./components/NewExpense/NewExpense";
 
 const DUMMY_LIST = [
   {
+    id: 'e1',
     title: "Car Insurance",
     amount: 286.32,
     date: new Date(2021, 2, 12),
   },
   {
+    id: 'e2',
     title: "Food",
     amount: 16.32,
     date: new Date(2021, 2, 2),
   },
   {
+    id: 'e3',
     title: "Petrol",
     amount: 2186.32,
     date: new Date(2021, 2, 22),
   },
   {
+    id: 'e4',
     title: "Tax",
     amount: 2186.32,
     date: new Date(2021, 2, 19),
