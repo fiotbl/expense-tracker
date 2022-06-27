@@ -9,20 +9,24 @@ const Expense = (props) => {
 
   const onYearSelectHandler = (selectedYear) => {
     setYear(selectedYear);
-    console.log("expenses.js")
     console.log(selectedYear);
   }
+
+  const filteredExpenses = props.expenses.filter(expense => {
+    return expense.date.getFullYear().toString() === year // if true, item added to filteredExpenses
+  });
+
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={year} onYearSelect={onYearSelectHandler} />
-        {props.expenses.map((expense) =>
+        {filteredExpenses.map((expense) =>
         (<ExpenseItem
           key={expense.id} // key is a prop that can be added to ANY component (custom or built in)
           title={expense.title}
           amount={expense.amount}
-          date={expense.date} 
-          />))}
+          date={expense.date}
+        />))}
 
       </Card>
     </div>
