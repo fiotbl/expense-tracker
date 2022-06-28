@@ -13,6 +13,7 @@ const ExpenseForm = (prop) => {
     enteredDate: ''
   });
 
+
   const titleChangeHandler = (event) => {
     // setEnteredTitle(event.target.value);
     setUserInput({
@@ -53,16 +54,15 @@ const ExpenseForm = (prop) => {
       date: new Date(userInput.enteredDate) // create variables using the states
     }
     prop.onAddNewExpense(expenseData); // prop to pass data to NewExpense parent
-    // console.log(expenseData.title);
-    // console.log(expenseData.amount);
-    // console.log(expenseData.date);
     setUserInput({
       enteredTitle: '',
       enteredAmount: '',
       enteredDate: '',
     })
+    prop.exitAddNewExpense();
 
   };
+
 
   return (
     <form onSubmit={submitHandler}>
@@ -95,10 +95,13 @@ const ExpenseForm = (prop) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button onClick={prop.exitAddNewExpense}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
   );
+
+
 };
 
 export default ExpenseForm;

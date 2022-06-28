@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm"
 
 const NewExpense = (prop) => {
+  const [addExpenseClicked, setAddExpenseClicked] = useState(false)
+  const setClickedTrue = () => setAddExpenseClicked(true)
+  const exitAddNewExpenseHandler = () => setAddExpenseClicked(false)
+
   const addNewExpenseHandler = (newexpense) => {
     const expense = {
       ...newexpense,
@@ -12,7 +17,8 @@ const NewExpense = (prop) => {
   }
 
   return <div className="new-expense">
-      <ExpenseForm onAddNewExpense={addNewExpenseHandler}/>
+    {!addExpenseClicked && <button onClick={setClickedTrue}>Add New Expense</button>}
+    {addExpenseClicked && <ExpenseForm onAddNewExpense={addNewExpenseHandler} exitAddNewExpense={exitAddNewExpenseHandler}/>}
   </div>;
 };
 
