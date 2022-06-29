@@ -50,7 +50,7 @@ const ExpenseForm = (prop) => {
     event.preventDefault(); // prevent default of request being sent and page reloading
     const expenseData = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount,
       date: new Date(userInput.enteredDate) // create variables using the states
     }
     prop.onAddNewExpense(expenseData); // prop to pass data to NewExpense parent
